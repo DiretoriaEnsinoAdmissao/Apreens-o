@@ -780,32 +780,36 @@
     </div>
 
     <script>
-      // Sistema de Login
-      const validUsers = {
-        lacroix.v: { nome: "<@807714970061373490>" },
-		petrov.m: { nome: "<@1115867304664772648>" },
-		ramos.d: { nome: "<@1029757912966504509>" },
-		veitosa.v: { nome: "<@238298169836830720>" },
-		feijao.r: { nome: "<@1119273905312505968>" },
-		caruzoOFC: { nome: "<@338052079249653782>" },
-      };
-      let loggedInUser = null; // Armazenar usuário logado
+// Sistema de Login
+const validUsers = {
+  "lacroix.v": { nome: "<@807714970061373490>" },
+  "petrov.m": { nome: "<@1115867304664772648>" },
+  "ramos.d": { nome: "<@1029757912966504509>" },
+  "veitosa.v": { nome: "<@238298169836830720>" },
+  "feijao.r": { nome: "<@1119273905312505968>" },
+  "caruzoofc": { nome: "<@338052079249653782>" }, // Padronizado para minúsculas
+};
 
-      document
-        .getElementById("loginButton")
-        .addEventListener("click", function () {
-          const loginInput = document.getElementById("login").value;
-          const user = validUsers[loginInput];
+let loggedInUser = null; // Armazenar usuário logado
 
-          if (user) {
-            loggedInUser = user.nome; // Armazena o nome do usuário logado
-            document.getElementById("loginForm").style.display = "none";
-            document.getElementById("formContainer").style.display = "block"; // Mostra o formulário
-          } else {
-            document.getElementById("loginErrorMessage").style.display =
-              "block"; // Mostra mensagem de erro
-          }
-        });
+document.getElementById("loginButton").addEventListener("click", function () {
+  const loginInput = document.getElementById("login").value.trim().toLowerCase(); // Força minúsculas
+  const user = validUsers[loginInput];
+
+  if (user) {
+    loggedInUser = user.nome; // Armazena o nome do usuário logado
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("formContainer").style.display = "block"; // Mostra o formulário
+    document.getElementById("loginErrorMessage").style.display = "none"; // Oculta a mensagem de erro
+  } else {
+    document.getElementById("loginErrorMessage").textContent =
+      "Usuário não encontrado. Tente novamente.";
+    document.getElementById("loginErrorMessage").style.display = "block"; // Mostra mensagem de erro
+  }
+});
+
+
+
 
 document
   .getElementById("form")
