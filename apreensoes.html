@@ -5,34 +5,67 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
-    <style>
-      #formContainer {
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+        color: #ffffff;
+        background-color: transparent; /* Define o fundo como transparente */
+    }
+
+    html {
+        background-color: transparent; /* Garante que o fundo do HTML também seja transparente */
+    }
+
+    #formContainer {
         display: none; /* Esconde o formulário inicialmente */
-      }
-      /* Centraliza o texto do placeholder apenas no campo de login */
-      #login::placeholder {
-        text-align: center; /* Centraliza o texto do placeholder */
-      }
+    }
 
-      /* Centraliza o formulário de login */
-      #loginForm {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 55vh; /* Ocupa toda a altura da tela */
-      }
 
-      /* Ajusta a largura do campo de login */
-      .small-input {
+/* Centraliza o texto do placeholder */
+#login {
+    text-align: center; /* Centraliza o texto digitado no campo */
+}
+
+#login::placeholder {
+    text-align: center; /* Centraliza o texto do placeholder */
+    color: #aaa; /* Opcional: cor do placeholder */
+}
+
+/* Centraliza o formulário de login */
+#loginForm {
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Compensa o deslocamento */
+    text-align: center;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    background-color: transparent; /* Fundo transparente */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
+    height: 55vh; /* Ocupa 55% da altura da tela */
+}
+
+    .small-input {
         width: 300px; /* Largura do campo de login */
-      }
-    </style>
+        background-color: transparent; /* Fundo transparente para o input */
+        border: 1px solid #fff; /* Opcional: Adiciona borda para melhor visibilidade */
+        color: #ffffff; /* Define a cor do texto */
+    }
+</style>
+
+
+
+
   </head>
   <body>
     <!-- Formulário de Login -->
     <div id="loginForm" class="container m-4 pl-4">
-      <label for="login">Login</label>
+      <label for="login"></label>
       <input
         type="text"
         id="login"
@@ -585,12 +618,12 @@
           />
         </div>
         <div class="control">
-          <label for="Facão" class="label">Facão</label>
+          <label for="Cutelo" class="label">Cutelo</label>
           <input
             class="input"
             type="number"
             placeholder="Quantidade"
-            name="Facão"
+            name="Cutelo"
 			min="0"
           />
         </div>
@@ -690,7 +723,7 @@
 			min="0"
           />
         </div>
-      </div>	  
+      </div>
         <!-- Campos lado a lado para materiais -->
         <div class="field is-grouped">
           <div class="control">
@@ -813,7 +846,7 @@ document
     try {
       // Envia os dados para o Google Apps Script
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzVSxUNlB1ts0DcV-gbbMvIJcVioSqgKjTmvxaoZGzjYpLkx1l5lhTiSWPdHrk7jHZg/exec",
+        "https://script.google.com/macros/s/AKfycbzDLqz4iwNn-JX5OOt6FKnOXaBGVY-TnXSaL3pqQzqsIFCVjba4HN6FU1S3c9ZmzgQ/exec",
         {
           redirect: "follow",
           method: "POST",
@@ -880,7 +913,7 @@ document
             if (formData.get("Rocket")) materiais.push(`Rocket: ${formData.get("Rocket")}`);
             if (formData.get("Placa Clonada")) materiais.push(`Placa Clonada: ${formData.get("Placa Clonada")}`);
             if (formData.get("Faca")) materiais.push(`Faca: ${formData.get("Faca")}`);
-            if (formData.get("Facão")) materiais.push(`Facão: ${formData.get("Facão")}`);
+            if (formData.get("Cutelo")) materiais.push(`Cutelo: ${formData.get("Cutelo")}`);
             if (formData.get("Bilhete")) materiais.push(`Bilhete: ${formData.get("Bilhete")}`);
             if (formData.get("Algema")) materiais.push(`Algema: ${formData.get("Algema")}`);
             if (formData.get("Soco Inglês")) materiais.push(`Soco Inglês: ${formData.get("Soco Inglês")}`);
