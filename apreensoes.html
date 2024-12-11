@@ -350,16 +350,6 @@
           />
         </div>
         <div class="control">
-          <label for="PeçasdeArmas" class="label">Peças de Armas</label>
-          <input
-            class="input"
-            type="number"
-            placeholder="Quantidade"
-            name="Peças de Armas"
-			min="0"
-          />
-        </div>
-        <div class="control">
           <label for="Pen Drive militar" class="label">Pen Drive militar</label>
           <input
             class="input"
@@ -724,6 +714,48 @@
           />
         </div>
       </div>
+      <div class="field is-grouped">
+        <div class="control">
+          <label for="Peças de Pisto" class="label">Peças de Pisto</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Peças de Pisto"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Peças de Fuzil" class="label">Peças de Fuzil</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Peças de Fuzil"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Peça de Submetralhadora" class="label">Peça de Submetralhadora</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Peça de Submetralhadora"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Peças de Espingardas" class="label">Peças de Espingardas</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Peças de Espingardas"
+			min="0"
+          />
+        </div>
+      </div>
         <!-- Campos lado a lado para materiais -->
         <div class="field is-grouped">
           <div class="control">
@@ -897,7 +929,6 @@ document
             if (formData.get("12 MM")) materiais.push(`12 MM: ${formData.get("12 MM")}`);
             if (formData.get("5.56 MM")) materiais.push(`5.56 MM: ${formData.get("5.56 MM")}`);
             if (formData.get("7.62 MM")) materiais.push(`7.62 MM: ${formData.get("7.62 MM")}`);
-            if (formData.get("Peças de Armas")) materiais.push(`Peças de Armas: ${formData.get("Peças de Armas")}`);
             if (formData.get("Pen Drive militar")) materiais.push(`Pen Drive militar: ${formData.get("Pen Drive militar")}`);
             if (formData.get("Lojinha")) materiais.push(`Lojinha: ${formData.get("Lojinha")}`);
             if (formData.get("Joalheira")) materiais.push(`Joalheira: ${formData.get("Joalheira")}`);
@@ -932,6 +963,10 @@ document
             if (formData.get("Radio")) materiais.push(`Radio: ${formData.get("Radio")}`);
 			if (formData.get("Dinamite")) materiais.push(`Dinamite: ${formData.get("Dinamite")}`);
 			if (formData.get("Pre-pago")) materiais.push(`Pre-pago: ${formData.get("Pre-pago")}`);
+			if (formData.get("Peças de Pisto")) materiais.push(`Peças de Pisto: ${formData.get("Peças de Pisto")}`);
+			if (formData.get("Peças de Fuzil")) materiais.push(`Peças de Fuzil: ${formData.get("Peças de Fuzil")}`);
+			if (formData.get("Peça de Submetralhadora")) materiais.push(`Peça de Submetralhadora: ${formData.get("Peça de Submetralhadora")}`);
+			if (formData.get("Peças de Espingardas")) materiais.push(`Peças de Espingardas: ${formData.get("Peças de Espingardas")}`);
 
       // Preparando os dados para o webhook do Discord
       const webhookURL =
