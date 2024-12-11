@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="pt-BR">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="index - DEA.">
+    <meta name="keywords" content="index - DEA.">
+    <meta name="author" content="Wellinton Jose - 25347">
+    <title>Diretoria de Ensino e Admissão</title>
+    <link rel="icon" href="https://i.ibb.co/Y0vjshh/ICON-DISCORD.png" type="image/png">
+    <!-- CSS do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://i.ibb.co/LZfT5Ff/Design-sem-nome-2.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #e0e0e0;
+        }
+
+        .container-custom {
+            max-width: 90%;
+            margin: 0 auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #30363d;
+            margin: 0 10px;
+            border-radius: 30px;
+            text-align: center;
+            transition: background 0.3s;
+            color: #e0e0e0;
+        }
+
+        .tab:hover {
+            background: #58a6ff;
+        }
+
+        .tab.active {
+            background: #58a6ff;
+            color: #000;
+        }
+
+        .content {
+            flex: 1;
+            display: none;
+            border-radius: 5px;
+            overflow: hidden;
+            height: calc(100% - 30px); /* Ajusta a altura do conteúdo */
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-custom">
+        <div class="tabs" role="tablist">
+            <div class="tab active" data-target="tab0" role="tab">Apreensões</div>
+        </div>
+
+        <div class="content active" id="tab0">
+            <iframe src="apreensoes.html" title="Apreensões"></iframe>
+        </div>
+    </div>
+
+    <!-- Script do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                tab.classList.add('active');
+                const target = document.getElementById(tab.getAttribute('data-target'));
+                if (target) target.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
