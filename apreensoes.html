@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <style>
+      #formContainer {
+        display: none; /* Esconde o formulário inicialmente */
+      }
+      /* Centraliza o texto do placeholder apenas no campo de login */
+      #login::placeholder {
+        text-align: center; /* Centraliza o texto do placeholder */
+      }
+
+      /* Centraliza o formulário de login */
+      #loginForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 55vh; /* Ocupa toda a altura da tela */
+      }
+
+      /* Ajusta a largura do campo de login */
+      .small-input {
+        width: 300px; /* Largura do campo de login */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Formulário de Login -->
+    <div id="loginForm" class="container m-4 pl-4">
+      <label for="login">Login</label>
+      <input
+        type="text"
+        id="login"
+        required
+        class="input small-input"
+        placeholder="Digite seu login"
+      />
+      <button id="loginButton" class="button is-primary" style="margin-top: 5px;">Entrar</button>
+      <p
+        class="error-message"
+        id="loginErrorMessage"
+        style="display: none; color: red;"
+      >
+        Login inválido.
+      </p>
+    </div>
+
+    <div id="formContainer">
+      <form id="form" class="container m-4 pl-4" method="POST">
+        <!-- Campos do formulário -->
+        <div class="field">
+          <label for="Operacao" class="label">Nome da operação</label>
+          <div class="control">
+            <textarea
+              class="textarea"
+              name="Nome da operação"
+              rows="1"
+              placeholder="Digite a operação aqui..."
+              required
+            ></textarea>
+          </div>
+        </div>
+
+<div class="field">
+  <div class="control">
+    <label for="DataHora" class="label">Data e Hora</label>
+    <input
+      class="input"
+      name="Data e Hora"
+	  rows="1"
+	  placeholder="Data e Hora"
+      required
+    />
+  </div>
+</div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <label for="Maconha" class="label">Maconha</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Maconha"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Cocaína" class="label">Cocaína</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Cocaína"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Notas" class="label">Notas Marcadas</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Notas Marcadas"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Cannabis" class="label">Cannabis</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Cannabis"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="ProdutoQ" class="label">Produto Químico</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Produto Químico"
+			min="0"
+          />
+        </div>
+      </div>
+        <!-- Campos lado a lado para materiais -->
+      <!-- Campos lado a lado para Maconha, Cocaína e Notas Marcadas -->
+      <div class="field is-grouped">
+        <div class="control">
+          <label for="FolhaC" class="label">Folha de Coca</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Folha de Coca"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Adubo" class="label">Adubo</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Adubo"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Kelvar" class="label">Kelvar</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Kelvar"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="PeçasC" class="label">Peças de Carro</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Peças de Carro"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="PneuB" class="label">Pneu Blindado</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Pneu Blindado"
+			min="0"
+          />
+        </div>
+      </div>
+	  
+      <!-- Nova linha para os campos adicionais -->
+      <div class="field is-grouped">
+        <div class="control">
+          <label for="C4" class="label">C4</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="C4"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="LockP" class="label">Lock Pick</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Lock Pick"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Ticket" class="label">Ticket De corrida</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Ticket"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Supressor" class="label">Supressor</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Supressor"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Laser" class="label">Laser</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Laser"
+			min="0"
+          />
+        </div>
+      </div>
+
+      <!-- Nova linha para os campos adicionais -->
+      <div class="field is-grouped">
+        <div class="control">
+          <label for="Colete" class="label">Colete</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Colete"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="9 MM" class="label">9 MM</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="9 MM"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="357M" class="label">357 Magnum</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="357 Magnum"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for=".45ACP" class="label">.45 ACP</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name=".45 ACP"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="12MM" class="label">12 MM</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="12 MM"
+			min="0"
+          />
+        </div>
+      </div>
+
+      <!-- Nova linha para os campos adicionais -->
+      <div class="field is-grouped">
+        <div class="control">
+          <label for="5.56MM" class="label">5.56 MM</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="5.56 MM"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="7.62 MM" class="label">7.62 MM</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="7.62 MM"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="PeçasdeArmas" class="label">Peças de Armas</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Peças de Armas"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Pen Drive militar" class="label">Pen Drive militar</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Pen Drive militar"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Lojinha" class="label">Pen drive Lojinha</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Lojinha"
+			min="0"
+          />
+        </div>
+      </div>
+	  
+      <!-- Nova linha para os campos adicionais -->
+      <div class="field is-grouped">
+        <div class="control">
+          <label for="Joalheira" class="label">Pen drive Joalheira</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Joalheira"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="molotovmolotov" class="label">molotov</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="molotov"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="USP" class="label">USP</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="USP"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Glock" class="label">Glock</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Glock"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Sig Sauer" class="label">Sig Sauer</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Sig Sauer"
+			min="0"
+          />
+        </div>
+      </div>
+      <!-- Nova linha para os campos adicionais -->
+      <div class="field is-grouped">
+        <div class="control">
+          <label for="Five-seven" class="label">Five-seven</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Five-seven"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Revolver" class="label">Revolver</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Revolver"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Desert" class="label">Desert</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Desert"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Double Tec-9" class="label">Double Tec-9</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Double Tec-9"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Uzi" class="label">Uzi</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Uzi"
+			min="0"
+          />
+        </div>
+      </div>
+	  
+      <!-- Nova linha para os campos adicionais -->
+      <div class="field is-grouped">
+        <div class="control">
+          <label for="MP5" class="label">MP5</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="MP5"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Mossberg" class="label">Mossberg</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Mossberg"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="AA12" class="label">AA12</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="AA12"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="M16" class="label">M16</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="M16"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Imbel IA2" class="label">Imbel IA2</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Imbel IA2"
+			min="0"
+          />
+        </div>
+      </div>
+	  
+      <!-- Nova linha para os campos adicionais -->
+      <div class="field is-grouped">
+        <div class="control">
+          <label for="G36C" class="label">G36C</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="G36C"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="SG 553SG 553" class="label">SG 553</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="SG 553"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="AR-15" class="label">AR-15</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="AR-15"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="AK-47" class="label">AK-47</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="AK-47"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Rocket" class="label">Rocket</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Rocket"
+			min="0"
+          />
+        </div>
+      </div>
+      <!-- Nova linha para os campos adicionais -->
+      <div class="field is-grouped">
+        <div class="control">
+          <label for="Placa Clonada" class="label">Placa Clonada</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Placa Clonada"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Faca" class="label">Faca</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Faca"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Facão" class="label">Facão</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Facão"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Bilhete" class="label">Bilhete</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Bilhete"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Algema" class="label">Algema</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Algema"
+			min="0"
+          />
+        </div>
+      </div>
+	  
+      <div class="field is-grouped">
+        <div class="control">
+          <label for="Soco Inglês" class="label">Soco Inglês</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Soco Inglês"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Taco de baseball" class="label">Taco de baseball</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Taco de baseball"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Spray de Pimenta" class="label">Spray de Pimenta</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Spray de Pimenta"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Lixadeira" class="label">Lixadeira</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Lixadeira"
+            name="Lixadeira"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Radio" class="label">Radio</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Radio"
+			min="0"
+          />
+        </div>
+      </div>
+      <!-- Campos lado a lado para Dinamite-->
+      <div class="field is-grouped">
+        <div class="control">
+          <label for="Dinamite" class="label">Dinamite</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Dinamite"
+			min="0"
+          />
+        </div>
+        <div class="control">
+          <label for="Pre-pago" class="label">Pre-pago</label>
+          <input
+            class="input"
+            type="number"
+            placeholder="Quantidade"
+            name="Pre-pago"
+			min="0"
+          />
+        </div>
+      </div>	  
+        <!-- Campos lado a lado para materiais -->
+        <div class="field is-grouped">
+          <div class="control">
+            <label for="Imagem" class="label">Imagem</label>
+            <input
+              class="input"
+              type="file"
+              id="imageUpload"
+              name="Imagem"
+              multiple
+              accept="image/*" 
+            />
+            <p class="help"><strong>Por favor, tenha cuidado com o tamanho em MB da imagem.<br>Não se esqueça de incluir os comprovantes (prints) do inventário do detido.</strong></p>
+          </div>
+          <div class="control">
+            <label for="Arquivo" class="label">Link</label>
+            <textarea
+              class="textarea"
+              name="Arquivo"
+              rows="1"
+              style="width: 300px;"
+              placeholder="Link das imagens aqui..."
+            ></textarea>
+            <p class="help"><strong>Faltou upar algumas imagens? utilize o link.</strong></p>
+          </div>
+        </div>
+
+        <div class="field has-text-centered">
+          <div class="control">
+            <button
+              class="button is-primary"
+              type="submit"
+              id="submit-button"
+            >
+              Enviar
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div
+        id="message"
+        style="
+          display: none;
+          margin: 20px;
+          font-weight: bold;
+          color: #000000; /* PRETO */
+          padding: 8px;
+          background-color: #f5f5dc; /* Bege */
+          border-radius: 4px;
+          border-color: #7fffd4; /* Aquamarine */
+        "
+      ></div>
+    </div>
+
+    <script>
+      // Sistema de Login
+      const validUsers = {
+        caruzoOFC: { nome: "<@338052079249653782>" },
+      };
+      let loggedInUser = null; // Armazenar usuário logado
+
+      document
+        .getElementById("loginButton")
+        .addEventListener("click", function () {
+          const loginInput = document.getElementById("login").value;
+          const user = validUsers[loginInput];
+
+          if (user) {
+            loggedInUser = user.nome; // Armazena o nome do usuário logado
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("formContainer").style.display = "block"; // Mostra o formulário
+          } else {
+            document.getElementById("loginErrorMessage").style.display =
+              "block"; // Mostra mensagem de erro
+          }
+        });
+
+document
+  .getElementById("form")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault(); // Previne o envio padrão do formulário
+
+    const imageUpload = document.getElementById('imageUpload');
+    const linkInput = document.querySelector('textarea[name="Arquivo"]');
+    const messageElement = document.getElementById("message");
+
+    // Verifica se o link está vazio e se nenhuma imagem foi selecionada
+    if (linkInput.value.trim() === '' && imageUpload.files.length === 0) {
+      messageElement.textContent = 'Por favor, envie uma imagem ou insira um link.';
+      messageElement.style.display = 'block'; // Mostra a mensagem
+      messageElement.style.backgroundColor = '#FFCCCB'; // Cor de fundo para erro
+      messageElement.style.color = '#000000'; // Cor do texto
+	  messageElement.style.textAlign = 'center'; // Centraliza o texto
+	  messageElement.scrollIntoView({ behavior: 'smooth' });
+      return; // Impede o envio do formulário
+    }
+
+    messageElement.style.display = 'none'; // Esconde a mensagem se o formulário for válido
+
+    document.getElementById("submit-button").disabled = true;
+
+    // Coleta os dados do formulário
+    var formData = new FormData(this);
+    var keyValuePairs = [];
+    for (var pair of formData.entries()) {
+      keyValuePairs.push(pair[0] + "=" + pair[1]);
+    }
+
+    var formDataString = keyValuePairs.join("&");
+
+    // Exibir a mensagem de "Enviando..."
+    messageElement.textContent = "Relatório de apreensão em processamento. Por favor, aguarde...";
+    messageElement.style.display = "block";
+    messageElement.style.backgroundColor = "#FFFFE0"; /* Amarelo */
+    messageElement.style.color = "#000000"; /* Preto */
+	messageElement.style.textAlign = 'center';
+	messageElement.scrollIntoView({ behavior: 'smooth' });
+
+    try {
+      // Envia os dados para o Google Apps Script
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbzVSxUNlB1ts0DcV-gbbMvIJcVioSqgKjTmvxaoZGzjYpLkx1l5lhTiSWPdHrk7jHZg/exec",
+        {
+          redirect: "follow",
+          method: "POST",
+          body: formDataString,
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Falha ao enviar para o Google Apps Script");
+      }
+
+      // Coleta dados para enviar ao webhook do Discord
+      const Operacao = formData.get("Nome da operação");
+      const DataHora = formData.get("Data e Hora");
+      const Arquivo = formData.get("Arquivo");
+          const materiais = [];
+            if (formData.get("Maconha")) materiais.push(`Maconha: ${formData.get("Maconha")}`);
+            if (formData.get("Cocaína")) materiais.push(`Cocaína: ${formData.get("Cocaína")}`);
+            if (formData.get("Notas Marcadas")) materiais.push(`Notas Marcadas: ${formData.get("Notas Marcadas")}`);
+            if (formData.get("Produto Quimico")) materiais.push(`Produto Quimico: ${formData.get("Produto Quimico")}`);
+            if (formData.get("Cannabis")) materiais.push(`Cannabis: ${formData.get("Cannabis")}`);
+            if (formData.get("Kelvar")) materiais.push(`Kelvar: ${formData.get("Kelvar")}`);
+            if (formData.get("Folha de Coca")) materiais.push(`Folha de Coca: ${formData.get("Folha de Coca")}`);
+            if (formData.get("Pneu Blindado")) materiais.push(`Pneu Blindado: ${formData.get("Pneu Blindado")}`);
+            if (formData.get("Adubo")) materiais.push(`Adubo: ${formData.get("Adubo")}`);
+            if (formData.get("Peças de Carro")) materiais.push(`Peças de Carro: ${formData.get("Peças de Carro")}`);
+            if (formData.get("C4")) materiais.push(`C4: ${formData.get("C4")}`);
+            if (formData.get("Lock Pick")) materiais.push(`Lock Pick: ${formData.get("Lock Pick")}`);
+            if (formData.get("Ticket")) materiais.push(`Ticket: ${formData.get("Ticket")}`);
+            if (formData.get("Supressor")) materiais.push(`Supressor: ${formData.get("Supressor")}`);
+            if (formData.get("Laser")) materiais.push(`Laser: ${formData.get("Laser")}`);
+            if (formData.get("Coletes")) materiais.push(`Coletes: ${formData.get("Coletes")}`);
+            if (formData.get("9 MM")) materiais.push(`9 MM: ${formData.get("9 MM")}`);
+            if (formData.get("357 Magnum")) materiais.push(`357 Magnum: ${formData.get("357 Magnum")}`);
+            if (formData.get(".45 ACP")) materiais.push(`.45 ACP: ${formData.get(".45 ACP")}`);
+            if (formData.get("12 MM")) materiais.push(`12 MM: ${formData.get("12 MM")}`);
+            if (formData.get("5.56 MM")) materiais.push(`5.56 MM: ${formData.get("5.56 MM")}`);
+            if (formData.get("7.62 MM")) materiais.push(`7.62 MM: ${formData.get("7.62 MM")}`);
+            if (formData.get("Peças de Armas")) materiais.push(`Peças de Armas: ${formData.get("Peças de Armas")}`);
+            if (formData.get("Pen Drive militar")) materiais.push(`Pen Drive militar: ${formData.get("Pen Drive militar")}`);
+            if (formData.get("Lojinha")) materiais.push(`Lojinha: ${formData.get("Lojinha")}`);
+            if (formData.get("Joalheira")) materiais.push(`Joalheira: ${formData.get("Joalheira")}`);
+            if (formData.get("molotov")) materiais.push(`molotov: ${formData.get("molotov")}`);
+            if (formData.get("USP")) materiais.push(`USP: ${formData.get("USP")}`);
+            if (formData.get("Glock")) materiais.push(`Glock: ${formData.get("Glock")}`);
+            if (formData.get("Sig Sauer")) materiais.push(`Sig Sauer: ${formData.get("Sig Sauer")}`);
+            if (formData.get("Five-seven")) materiais.push(`Five-seven: ${formData.get("Five-seven")}`);
+            if (formData.get("Revolver")) materiais.push(`Revolver: ${formData.get("Revolver")}`);
+            if (formData.get("Desert")) materiais.push(`Desert: ${formData.get("Desert")}`);
+            if (formData.get("Double Tec-9")) materiais.push(`Double Tec-9: ${formData.get("Double Tec-9")}`);
+            if (formData.get("Uzi")) materiais.push(`Uzi: ${formData.get("Uzi")}`);
+            if (formData.get("MP5")) materiais.push(`MP5: ${formData.get("MP5")}`);
+            if (formData.get("Mossberg")) materiais.push(`Mossberg: ${formData.get("Mossberg")}`);
+            if (formData.get("AA12")) materiais.push(`AA12: ${formData.get("AA12")}`);
+            if (formData.get("M16")) materiais.push(`M16: ${formData.get("M16")}`);
+            if (formData.get("Imbel IA2")) materiais.push(`Imbel IA2: ${formData.get("Imbel IA2")}`);
+            if (formData.get("G36C")) materiais.push(`G36C: ${formData.get("G36C")}`);
+            if (formData.get("SG 553")) materiais.push(`SG 553: ${formData.get("SG 553")}`);
+            if (formData.get("AR-15")) materiais.push(`AR-15: ${formData.get("AR-15")}`);
+            if (formData.get("AK-47")) materiais.push(`AK-47: ${formData.get("AK-47")}`);
+            if (formData.get("Rocket")) materiais.push(`Rocket: ${formData.get("Rocket")}`);
+            if (formData.get("Placa Clonada")) materiais.push(`Placa Clonada: ${formData.get("Placa Clonada")}`);
+            if (formData.get("Faca")) materiais.push(`Faca: ${formData.get("Faca")}`);
+            if (formData.get("Facão")) materiais.push(`Facão: ${formData.get("Facão")}`);
+            if (formData.get("Bilhete")) materiais.push(`Bilhete: ${formData.get("Bilhete")}`);
+            if (formData.get("Algema")) materiais.push(`Algema: ${formData.get("Algema")}`);
+            if (formData.get("Soco Inglês")) materiais.push(`Soco Inglês: ${formData.get("Soco Inglês")}`);
+            if (formData.get("Taco de baseball")) materiais.push(`Taco de baseball: ${formData.get("Taco de baseball")}`);
+            if (formData.get("Spray de Pimenta")) materiais.push(`Spray de Pimenta: ${formData.get("Spray de Pimenta")}`);
+            if (formData.get("Lixadeira")) materiais.push(`Lixadeira: ${formData.get("Lixadeira")}`);
+            if (formData.get("Radio")) materiais.push(`Radio: ${formData.get("Radio")}`);
+			if (formData.get("Dinamite")) materiais.push(`Dinamite: ${formData.get("Dinamite")}`);
+			if (formData.get("Pre-pago")) materiais.push(`Pre-pago: ${formData.get("Pre-pago")}`);
+
+      // Preparando os dados para o webhook do Discord
+      const webhookURL =
+        "https://discord.com/api/webhooks/1316143693618741369/whjpDFYlNM7Rg3PJcPaD82spA2J80XGnArG2WrSdMk95iRCZ5qzzpTz96oFDiObSCrPd";
+      const webhookData = new FormData();
+      webhookData.append(
+        "content",
+        `📁**Relatório de Apreensão**\n- **Nome da Operação:** ${Operacao}\n- **Ocorrido:** ${DataHora}\n- **Link:** ${
+          Arquivo ? Arquivo : ""
+        }\n- **Materiais:** ${
+          materiais.length > 0
+            ? "\n> " +
+              materiais
+                .map((material) => "-# " + material)
+                .join("\n> ")
+            : ""
+        }\n- **Responsável pelo Relatório:** ${loggedInUser}`
+      );
+
+      // Adiciona as imagens (se fornecidas) como anexos ao webhook
+      const imageFiles = document.getElementById("imageUpload").files;
+      for (let i = 0; i < imageFiles.length; i++) {
+        webhookData.append(`file${i}`, imageFiles[i]);
+      }
+
+      // Envia dados para o webhook do Discord
+      const webhookResponse = await fetch(webhookURL, {
+        method: "POST",
+        body: webhookData,
+      });
+
+      if (!webhookResponse.ok) {
+        throw new Error("Falha ao enviar. Possível que imagens são muito pesadas. Tente fazer o upload das imagens e utilizar o link.");
+      }
+
+      messageElement.textContent = "Relatório de apreensão enviado com sucesso! Obrigado pela sua contribuição.";
+      messageElement.style.backgroundColor = "#98FB98";
+      messageElement.style.color = "#000000";
+      messageElement.style.display = "block";
+	  messageElement.style.textAlign = 'center';
+	  messageElement.scrollIntoView({ behavior: 'smooth' });
+
+      // Temporizador para esconder a mensagem após 3 segundos
+      setTimeout(function () {
+        messageElement.textContent = "";
+        messageElement.style.display = "none";
+      }, 3000);
+
+      // Reinicia o formulário após o envio
+      this.reset();
+    } catch (error) {
+      messageElement.textContent = error.message;
+      messageElement.style.backgroundColor = "#FFCCCB";
+      messageElement.style.color = "#000000";
+      messageElement.style.display = "block";
+	  messageElement.scrollIntoView({ behavior: 'smooth' });
+
+
+      // Temporizador
+      setTimeout(function () {
+        messageElement.textContent = "";
+        messageElement.style.display = "none";
+      }, 10000);
+    } finally {
+      document.getElementById("submit-button").disabled = false; // Habilita o botão de enviar novamente
+    }
+  });
+
+    </script>
+  </body>
+</html>
