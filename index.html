@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">
+  <title>Formulário de Relatório</title>
+</head>
+<body>
+  <!-- Container principal -->
+  <section class="section">
+    <div class="container">
+      <!-- Formulário de Login -->
+      <div id="loginForm" class="box">
+        <h1 class="title is-4 has-text-centered">Acesso ao Sistema</h1>
+        <div class="field">
+          <label for="login" class="label">Login</label>
+          <div class="control">
+            <input
+              id="login"
+              type="text"
+              class="input"
+              placeholder="Digite seu login"
+              required
+            />
+          </div>
+          <p class="help is-danger" id="loginErrorMessage" style="display: none;">
+            Login inválido.
+          </p>
+        </div>
+        <div class="field has-text-centered">
+          <button id="loginButton" class="button is-primary">Entrar</button>
+        </div>
+      </div>
+
+      <!-- Formulário principal -->
+      <div id="formContainer" class="box" style="display: none;">
+        <img src="https://i.imgur.com/OKfKsCn.png" alt="" style="width: 150px; height: 150px; padding-right: 0.8em; float: left; margin-right: 1em;" class="d-flex align-top">
+        <form id="form" method="POST">
+          <!-- Nome da Operação -->
+          <div class="field">
+            <label for="Operacao" class="label">Nome da Operação</label>
+            <div class="control">
+              <textarea
+                id="Operacao"
+                name="Nome da operação"
+                class="textarea"
+                rows="1"
+                placeholder="Digite o nome da operação..."
+                required
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Data e Hora -->
+          <div class="field">
+            <label for="DataHora" class="label">Data e Hora</label>
+            <div class="control">
+              <input
+                id="DataHora"
+                name="Data e Hora"
+                class="input"
+                type="text"
+                placeholder="Digite a data e hora (ex: 01/01/2024 14:30)"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="my-custom-field">
+            <label for="items" class="label"></label>
+            <select id="items" multiple size="8" onchange="showFields()">
+              <option value="Entorpecentes">Entorpecentes</option>
+              <option value="Notas-Marcadas">Notas Marcadas</option>
+              <option value="Mercadorias">Mercadorias</option>
+              <option value="Pen-Drive">Pen Drive</option>
+              <option value="Armamento">Armamento</option>
+              <option value="Municao">Munição</option>
+              <option value="Peças-de-Armas">Peças de Armas</option>
+              <option value="Usou-para-fins-ilegais">Usou para fins ilegais</option>
+            </select>
+          </div>
+        
+<!-- Campos de input para os itens -->
+<div id="inputFieldsContainer"></div>
+
+
+
+          <!-- Upload de Imagem e Link -->
+          <div class="field">
+            <div class="columns">
+              <div class="column is-half">
+                <label for="Imagem" class="label">Upload de Imagem</label>
+                <div class="control">
+                  <input
+                    id="imageUpload"
+                    type="file"
+                    name="Imagem"
+                    class="input"
+                    multiple
+                    accept="image/*"
+                  />
+                </div>
+                <p class="help">
+                  Inclua imagens comprovando os materiais apreendidos.
+                </p>
+              </div>
+              <div class="column is-half">
+                <label for="Arquivo" class="label">Link para Imagens</label>
+                <div class="control">
+                  <textarea
+                    id="Arquivo"
+                    name="Arquivo"
+                    class="textarea"
+                    placeholder="Cole o link das imagens aqui..."
+                    rows="1"
+                  ></textarea>
+                </div>
+                <p class="help">Use o link para imagens extras.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botão de envio -->
+          <div class="button.is-primary">
+            <button class="button is-primary" type="submit" id="submit-button">
+              Enviar Relatório
+            </button>
+          </div>
+        </form>
+
+        <!-- Mensagem de status -->
+        <div id="message" class="notification is-hidden">
+          <p class="has-text-weight-bold"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
